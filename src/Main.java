@@ -52,6 +52,14 @@ public class Main {
 
         System.out.println("Long Value Range(" + Long.MIN_VALUE + " to " + Long.MAX_VALUE +")");
 
+        byte myMinByteValue = Byte.MIN_VALUE;
+        System.out.println(myMinByteValue);
+
+        byte newByte = (byte) (myMinByteValue *  40);
+        System.out.println(newByte);
+
+        //his advice is always use an int unless you have a really good reason
+
 
 
 
