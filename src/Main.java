@@ -60,6 +60,20 @@ public class Main {
 
         //his advice is always use an int unless you have a really good reason
 
+        // class 19 - Primitive Types challange
+
+        byte myByte = 45;
+        short myShort = 34;
+        int myInt = 50909;
+
+        long myLong = (50000L + 10L* (myByte + myShort +myInt));
+        System.out.println(myLong);
+
+        short shortTotal = (short)(50000 + 10 * (myByte + myShort +myInt));
+        System.out.println(shortTotal);
+
+
+
 
 
 
