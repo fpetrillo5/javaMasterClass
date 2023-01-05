@@ -72,6 +72,25 @@ public class Main {
         short shortTotal = (short)(50000 + 10 * (myByte + myShort +myInt));
         System.out.println(shortTotal);
 
+        // class 21 floats and double primitives
+
+        System.out.println("float Value Range(" + Float.MIN_VALUE + " to " + Float.MAX_VALUE +")");
+        System.out.println("double Value Range(" + Double.MIN_VALUE + " to " + Double.MAX_VALUE +")");
+
+        float myFloat = 5.25F;
+        System.out.println(myFloat);
+
+        /*Certification exam pointer
+        not everyone realizes that java's default data type for a decimal literal is
+        a double, which is larger and more precise than a float.
+        Java likes to put a similar line of code in its code segments on exam questions,
+        to that we saw earlier, omitting that 'f' suffix. Without your compiler of ide, this
+        statement can look fairly innocuous.
+            float myOtherfloatValue = 5.25;
+         the number 5.25 is a double, so assigning it to a float will raise an error
+         This is a gift question to an exam taker, if you can easily spot this
+         compiler error.
+         */
 
 
 
