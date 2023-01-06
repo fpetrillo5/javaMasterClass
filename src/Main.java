@@ -92,6 +92,63 @@ public class Main {
          compiler error.
          */
 
+        //class 22 - floating point precision and a challenge
+
+        myInt = 5; myFloat =5f; double myDouble = 5d;
+        System.out.println("myInt = " + myInt + " myFloat = " + myFloat + " myDounble = " + myDouble);
+
+        //you can also use java scientific notation
+        double sciNotation = 5e1;
+        System.out.println(sciNotation);
+
+//        sciNotation = 5e1;
+//        System.out.println(sciNotation);
+
+        myInt = 5/2;
+        System.out.println(myInt);
+
+        myFloat = 5f/2f;
+        System.out.println(myFloat);
+
+        myDouble = 5d/2d;
+        System.out.println(myDouble);
+
+        myInt = 5/3;
+        System.out.println(myInt);
+
+        //floats print out 7 decimals in the output
+        myFloat = 5f/3f;
+        System.out.println(myFloat);
+
+        //double print out 16 decimals in the output
+        myDouble = 5d/3d;
+        System.out.println(myDouble);
+
+        /*for the float, the number stored in memory is actually more precise
+        than that shown but the output stops at 7 decimals. the same is true
+        for a double.
+         */
+
+        //dont need the d sufffix, because java will automatically look at a
+        //decimal number and assume its a double.
+        myDouble = 5.00/3.00;
+        System.out.println(myDouble);
+
+        //as long as one of the operands is a double, your result will be a double
+        myDouble = 5.00/3;
+        System.out.println(myDouble);
+
+        /*myFloat = 5.00/3f;
+        this wont work on a float. even though one of the literals is float,
+        (3 with f suffix), the other literal is a double 5.0 and the result and
+        you cannot assign a double to a float variable
+         */
+
+
+
+
+
+
 
 
 
