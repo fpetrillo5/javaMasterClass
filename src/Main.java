@@ -144,6 +144,166 @@ public class Main {
         you cannot assign a double to a float variable
          */
 
+        /*why is the double a better choice in most circumstances
+        its actually to process faster on many modern computers.
+            that is because computers have, at the chip level, the functionality
+            to deal with these double numbers faster than the equivalent float.
+
+            second, the java libraries that we will get into later in the course,
+            particularly the math functions, are often written to process doubles
+            and not floats, to return the result as a double
+
+            java selected the double because it is more precise, and it can handle
+            a larger range of numbers.
+         */
+        double lbs = 225;
+        double lbsToKG = .45359237;
+        double conKG = lbs*lbsToKG;
+        System.out.println(conKG);
+
+        /*floating point number precision tips
+        in general, float and double are great for general floating point operations.
+        but neither should be used when precise calculations are required - this is
+        due to a limitation with how floating point numbers are stored, and not a
+        java problem.
+
+        java has a class called BigDecimal that overcomes this
+         */
+
+        //class 23 - the char and boolean primitive data types
+
+        /*char data type
+        a char occupies 2 bytes of memory, or 16 bits and thus has a width of 16
+
+        unicode
+        unicode is an international encoding standard for use with different languages
+        and scripts by which each letter, digit, or symbol is assigned a unique
+        numeric value that applies across different platforms and programs
+         */
+
+        char myChar = 'D';
+        System.out.println(myChar);
+
+        char myUnicode = '\u0044';
+        System.out.println(myChar);
+
+        char myDecimalCode = 68;
+        System.out.println(myChar);
+
+        /*3 ways to assign a value to a char
+        1) literal character char myChar = 'D';
+        2) unicode value char myChar = '\u0044';
+        3) integer value = char myChar = 68;
+         */
+
+        char mySimpleChar = '?';
+        System.out.println(mySimpleChar);
+
+        char myUnicodeChar = '\u003F';
+        System.out.println(myUnicodeChar);
+
+        char myDecimalChar = 63;
+        System.out.println(myDecimalChar);
+
+        boolean myTrueBooleanValue = true;
+        System.out.println(myTrueBooleanValue);
+
+        boolean myFalseBooleanValue = false;
+        System.out.println(myFalseBooleanValue);
+
+        //class 24 - primitive type recap and string data type
+
+        /*java's primittives'
+            boolean, byte, char, double, float, short, int, long
+
+            java's built in classes
+                wrappers(Boolean, Byte, Character, etc), Big Decimal, String
+
+            Your classes
+
+            Somebody's else's classes
+         */
+        //what is a sting: a string is a class that contains a sequence of characters
+
+        String myString = "This is a string";
+        System.out.println(" myString is equal to " +myString);
+
+         myString = myString +" this is a string and this is more ";
+        System.out.println(myString);
+
+        myString =  "I wish I had \u00241,000,000,000.00";
+        System.out.println(myString);
+
+        String lastString =  "10";
+        myInt = 50;
+        System.out.println(lastString+myInt);
+        System.out.println(lastString);
+
+        /*string vs StringBuilder
+            the string class is immutable, but can be used much like a primitive
+            data type
+
+            the StringBuilder class is mutable, but does not share the String's
+            special features, such as being able to assign it a String literal or
+            use + operator on it
+         */
+
+        //class 25 - operators, operands and expressions
+
+        /* operators in java are special symbols that perform specific operations
+        on one, two, or operands, and then return a result
+
+        what is an operand
+            an operand is a term used to describe any object that is manipulated
+            by an operator
+         */
+
+        char firstChar = 'A'; char secondChar = 'B';
+
+        System.out.println(firstChar + secondChar);
+
+        /* the + operator on char
+        you might remember that we said chars are stored as 2 byte numbers in memory
+        when you use the plus operator with chars, it is these numbers in memory
+        that get added together.
+        The character values dont get concatenated
+
+        01000001 + 01000010 = 010000011
+        65 + 66 = 131
+
+        the unicode values of 65 and 66 get added together
+
+        to get them to concatenate, we have to use a string. i am starting with
+        2 double quotes, this is called an empty string, and is a valid string.
+        we next use the plus on that string. any plus after a string is going
+        to be a concatenation operator
+         */
+
+        System.out.println("" + firstChar + secondChar);
+
+        //its important to understand the char and the string dont treat the
+        // plus sign the same
+
+        //class 26 - Abbreviating Operators
+
+        /* why do we want to use multiple statements in curly braces {}?
+            1) its a way to group statements together before executing them
+            it allows us to put statements on multiple lines is more natural
+            and readable
+            we can execute the group of statements as a whole, which more
+            closely resembles running code in java
+         */
+
+
+
+
+
+
+
+
+
+
+
 
 
 
