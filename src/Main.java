@@ -294,6 +294,54 @@ public class Main {
             closely resembles running code in java
          */
 
+        /*
+        postfix operator result++;
+        compound assignment operator result +=1;
+         */
+
+        int result = 1;
+        result = result + 1;
+        System.out.println(result);
+
+        result = 1;
+        result++;
+        System.out.println(result);
+
+        result = 1;
+        result--;
+        System.out.println(result);
+
+        result = 1;
+        result-=1;
+        System.out.println(result);
+
+        result = 1;
+        result+=5;
+        System.out.println(result);
+
+        result = 10;
+        result-=5.5;
+        System.out.println(result);
+        //result is 4 not 4.5 or error
+
+       // result = 10;
+        //result = result - 5.5;
+        //System.out.println(result);
+        //this throws an error but not the compound operator, tells us to cast
+
+        /*the compound operator x -= y is often said to be x=x-y but that is
+        not entirely true if y is not the same data type as x.
+        x -= y is really x = (data type of x) (x-y). An implicit cast is done
+        when using the compound operator, so no errors occurs,
+        but unexpected results may occur
+
+        so result -= 5.5;
+        is really
+        result = (int) (result - 5.5);
+         */
+
+
+
 
 
 
