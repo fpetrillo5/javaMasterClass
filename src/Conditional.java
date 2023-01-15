@@ -71,5 +71,38 @@ public class Conditional {
         performance testing
          */
 
+        //Ternary Operator
+
+        /*the ternary operator - java officially calls it the conditional
+        operator - has 3 operands, the only operator in java that does have 3
+         the structure of this operator is:
+         operand1 ? operand2 : operand3
+         tests if operand1 is true, if it is ture, it will return operand2
+         otherwise it returns operand3
+         */
+
+        String makeOfCar = "Volkswagen";
+        boolean isDomestic = makeOfCar == "Volkswagen" ? false : true;
+
+        if(isDomestic){
+            System.out.println("this car is domestic to our country");
+        }
+
+        /*to reiterate, the ternary operator is a way to replace an if
+        statement, if you want to get a value back based on a condition.
+         */
+
+        String s = (isDomestic) ? "this car is domestic" : "this car is not domestic";
+        System.out.println(s);
+
+        //Operator Precedence and Operator Challenge
+
+        double step1 = 20.00, step2 = 80.00;
+        double modCatch = (((step1 + step2) * 100.00) % 40.00);
+        boolean isZero = ( modCatch == 0.00);
+        System.out.println(isZero);
+        if(!isZero)
+            System.out.print("got some remainder");
+
     }
 }
