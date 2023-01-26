@@ -56,10 +56,10 @@ public class MainChallenge {
 
         //class 48 - method challenge
 
-        int score1 = 25;
-        int score2 = 100;
-        int score3 = 500;
-        int score4 = 1000;
+        int score1 = -1001;
+        int score2 = 99;
+        int score3 = 499;
+        int score4 = 999;
         int score5= 1500;
 
         String player1 ="Tim";
@@ -115,9 +115,9 @@ public class MainChallenge {
     public static int calculateHighScorePosition(int score){
         if(score >= 1000)
             return 1;
-        else if(score >= 500 && score < 1000)
+        else if(score >= 500 )// took out the && < 1000 because it was unnecessary. if its above 1000 it wont even make it to this line, so we can discard it
             return 2;
-        else if(score >= 100 && score <500)
+        else if(score >= 100)
             return 3;
         else
             return 4;
