@@ -41,7 +41,8 @@ public class FirstCodingExercises {
         //isLeapYearDriver();
         //areEqualByThreeDecimalPlacesDriver();
         //hasEqualSumDriver();
-        TeenDriver();
+       // TeenDriver();
+        areaDriver();
 
 
 
@@ -105,24 +106,24 @@ public class FirstCodingExercises {
             }
 
             public static void isLeapYearDriver(){
-//                isLeapYear(1700); //false
-//                isLeapYear(1800); //false
-//                isLeapYear(1900); // false
-//                isLeapYear(2100); //false
-//                isLeapYear(2200); //false
-//                isLeapYear(2300); //false
-//                isLeapYear(2500);//false
-//                isLeapYear(2600);//false
-//                isLeapYear(1600); //true
-//                isLeapYear(2000); //true
-//                isLeapYear(2400); // true
-//                isLeapYear(-1600); //false
-//                isLeapYear(1600); //true
-//                isLeapYear(2017); //false
-//                isLeapYear(2023);//false
-//                isLeapYear(34565645);//false
-//                isLeapYear(2020);//true
-                //isLeapYear(2600);//matthew test
+                isLeapYear(1700); //false
+                isLeapYear(1800); //false
+                isLeapYear(1900); // false
+                isLeapYear(2100); //false
+                isLeapYear(2200); //false
+                isLeapYear(2300); //false
+                isLeapYear(2500);//false
+                isLeapYear(2600);//false
+                isLeapYear(1600); //true
+                isLeapYear(2000); //true
+                isLeapYear(2400); // true
+                isLeapYear(-1600); //false
+                isLeapYear(1600); //true
+                isLeapYear(2017); //false
+                isLeapYear(2023);//false
+                isLeapYear(34565645);//false
+                isLeapYear(2020);//true
+                isLeapYear(2600);//matthew test
 
             }
 
@@ -217,7 +218,98 @@ public class FirstCodingExercises {
                     return false;
                 }
             }
+
+            public static void areaDriver(){
+        area(-45.09);
+        area(0);
+        area(3);
+        area(1.3);
+        area(45354.3453);
+        area(50);
+        area(5.0);
+        area(-1);
+
+        area(-9, 6);
+        area(-9, 6);
+        area(9, -6);
+        area(-9, -6);
+        area(5.0, 4.0);
+        area(-1.0, 4.0);
+        area(9.98, 6.76);
+        area(9, 6);
+        area(6, 6);
+            }
+
+
+            public static double area(double radius){
+        double result = -1.0;
+
+        //check if negative
+                if(radius < 0){
+                    System.out.println("please enter a radius greater then 0");
+                    return result;
+                } else {
+                    result = radius * radius * Math.PI;
+                    System.out.println("area is: " + result);
+                    return result;
+                }
+            }
+
+            public static double area(double x, double y){
+        double result = -1.0;
+
+                if(x < 0 || y < 0){
+                    System.out.println("please enter a parameter that is not negative");
+                    return result;
+                } else {
+                    result = x * y;
+                    System.out.println("area is: " + result);
+                    return result;
+                }
+
+            }
 }
+
+//Area Calculator
+
+/*
+Write a method named area with one double parameter named radius.
+
+The method needs to return a double value that represents the area of a circle.
+
+If the parameter radius is negative then return -1.0 to represent an invalid value.
+
+Write another overloaded method with 2 parameters x and y (both doubles), where x and y represent the sides of a rectangle.
+
+The method needs to return an area of a rectangle.
+
+If either or both parameters is/are a negative return -1.0 to indicate an invalid value.
+
+For formulas and PI value please check the tips below.
+
+Examples of input/output:
+
+    area(5.0); should return 78.53975
+
+    area(-1);  should return -1 since the parameter is negative
+
+    area(5.0, 4.0); should return 20.0 (5 * 4 = 20)
+
+    area(-1.0, 4.0);  should return -1 since first the parameter is negative
+
+
+
+
+TIP: ​The formula for calculating the area of a rectangle is x * y.
+
+TIP: ​The formula for calculating a circle area is radius * radius * PI.
+
+TIP: For PI use a constant from Math class e.g. Math.PI
+
+NOTE: All methods need to be defined as public static ​like we have been doing so far in the course.
+
+NOTE: Do not add a main method to your solution code!
+ */
 
 //Teen Number Checker
 
