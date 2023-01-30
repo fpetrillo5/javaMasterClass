@@ -42,7 +42,8 @@ public class FirstCodingExercises {
         //areEqualByThreeDecimalPlacesDriver();
         //hasEqualSumDriver();
        // TeenDriver();
-        areaDriver();
+        //areaDriver();
+        printYearsAndDaysDriver();
 
 
 
@@ -266,6 +267,24 @@ public class FirstCodingExercises {
                     System.out.println("area is: " + result);
                     return result;
                 }
+
+            }
+
+            public static void printYearsAndDaysDriver(){
+                printYearsAndDays(525600);
+                printYearsAndDays(1051200);
+                printYearsAndDays(561600);
+                printYearsAndDays(0);
+                printYearsAndDays(-78);
+            }
+
+            public static void printYearsAndDays(long minutes){
+        if(minutes < 0){
+            System.out.println("Invalid Value");
+        } else {
+            //format: XX min = YY y and ZZ d
+            // do work here of converting minutes to days and such
+        }
 
             }
 }
