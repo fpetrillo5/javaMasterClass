@@ -38,7 +38,10 @@ public class FirstCodingExercises {
 //        System.out.println( shouldWakeUp(true, 8));
 //        System.out.println( shouldWakeUp(true, -1));
 
-        isLeapYearDriver();
+        //isLeapYearDriver();
+        //areEqualByThreeDecimalPlacesDriver();
+        hasEqualSumDriver();
+
 
 
     }
@@ -118,10 +121,112 @@ public class FirstCodingExercises {
 //                isLeapYear(2023);//false
 //                isLeapYear(34565645);//false
 //                isLeapYear(2020);//true
-                isLeapYear(2600);//matthew test
+                //isLeapYear(2600);//matthew test
 
             }
-    }
+
+            public static void areEqualByThreeDecimalPlacesDriver(){
+                areEqualByThreeDecimalPlaces(4, 3.000455); //false
+                areEqualByThreeDecimalPlaces(-3.1756, -3.175); //true
+                areEqualByThreeDecimalPlaces(3.175, 3.176); //false
+                areEqualByThreeDecimalPlaces(3.0, 3.0); //true
+                areEqualByThreeDecimalPlaces(-3.123, 3.123); //false
+
+            }
+
+            public static boolean areEqualByThreeDecimalPlaces(double num1, double num2){
+        //need to get both inputs to 3 digits. will try and multiply by 1000 and then cast to an int then compare the 2
+
+                double originalNum1 = num1;
+                double originalNum2 = num2;
+
+                num1 *= 1000;
+                num2 *= 1000;
+
+                int num1Int = (int)num1 ;
+                int num2Int = (int)num2 ;
+
+
+                if(num1Int == num2Int){
+                    System.out.println("num1: " + originalNum1 + " is equal to num2: " + originalNum2 +" (up to 3 decimal places).");
+                    return true;
+                } else {
+                    System.out.println("num1: " +originalNum1 + " is not equal to num2: " + originalNum2 );
+                    return false;
+                }
+            }
+
+            public static void hasEqualSumDriver(){
+                hasEqualSum(1,3, 4);//true
+                hasEqualSum(1,1, 1);//false
+                hasEqualSum(1,1, 2);//true
+                hasEqualSum(1,-1, 0);//true
+
+            }
+
+            public static boolean hasEqualSum(int operand1, int operand2, int result){
+                // add operand1 and operand2 together and put into sum variable
+                // check sum and result if true
+                // this seems to easy
+
+                int sum = operand1 + operand2;
+
+                if(sum == result){
+                    System.out.println(operand1 + " plus " + operand2 + " equals "+ result);
+                    return true;
+                } else {
+                    System.out.println(operand1 + " plus " + operand2 + " does not equal "+ result);
+                    return false;
+                }
+            }
+}
+// Equal Sum Checker
+/*
+Write a method hasEqualSum with 3 parameters of type int.
+
+The method should return boolean and it needs to return true if the sum of the first and second parameter is equal to the third parameter. Otherwise, return false.
+
+
+EXAMPLES OF INPUT/OUTPUT:
+
+    hasEqualSum(1, 1, 1);  should return false since 1 + 1 is not equal to 1
+
+    hasEqualSum(1, 1, 2);  should return true since 1 + 1 is equal to 2
+
+    hasEqualSum(1, -1, 0);  should return true since 1 + (-1) is 1 - 1 and is equal to 0
+
+
+NOTE: The hasEqualSum method  needs to be defined as public static ​like we have been doing so far in the course.
+NOTE: Do not add a  main method to solution code.
+ */
+
+    //Decimal Comparator
+
+/*
+Write a method areEqualByThreeDecimalPlaces with two parameters of type double.
+
+The method should return boolean and it needs to return true if two double numbers are the same up to three decimal places. Otherwise, return false.
+EXAMPLES OF INPUT/OUTPUT:
+
+    areEqualByThreeDecimalPlaces(-3.1756, -3.175); → should return true since numbers are equal up to 3 decimal places.
+
+    areEqualByThreeDecimalPlaces(3.175, 3.176); → should return false since numbers are not equal up to 3 decimal places
+
+    areEqualByThreeDecimalPlaces(3.0, 3.0); → should return true since numbers are equal up to 3 decimal places.
+
+    areEqualByThreeDecimalPlaces(-3.123, 3.123); → should return false since numbers are not equal up to 3 decimal places.
+
+
+TIP: Use paper and pencil.
+
+TIP: Use casting.
+
+NOTE: The areEqualByThreeDecimalPlaces method  needs to be defined as public static ​like we have been doing so far in the course.
+NOTE: Do not add a  main method to solution code.
+
+
+
+ */
 
     /*Leap Year Calculator
 
