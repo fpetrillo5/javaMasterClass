@@ -279,13 +279,22 @@ public class FirstCodingExercises {
             }
 
             public static void printYearsAndDays(long minutes){
+        long days = 0;
+        long years = 0;
+        int remainingDays = 0;
         if(minutes < 0){
             System.out.println("Invalid Value");
         } else {
             //format: XX min = YY y and ZZ d
             // do work here of converting minutes to days and such
-        }
+            //do i go minutes -> days->years || mins ->years
 
+            days = minutes / (60 * 24);
+            years = days /365;
+            remainingDays = (int) days % 365;
+
+            System.out.println(minutes + " min = " + years + " y and " + remainingDays + " d");
+        }
             }
 }
 
