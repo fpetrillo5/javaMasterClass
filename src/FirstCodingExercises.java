@@ -330,12 +330,14 @@ public class FirstCodingExercises {
         }
 
         public static boolean isCatPlaying(boolean isSummer, int temperature){
-        boolean result = false;
-
-        //logic
-
-        return result;
-
+        //logic need to work scenarios first
+            if(isSummer && (temperature >= 25 && temperature <= 45)){
+                System.out.println("true");
+                return true;
+            }else {
+                System.out.println("false");
+                return false;
+            }
         }
 }
 
