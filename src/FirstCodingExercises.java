@@ -332,10 +332,13 @@ public class FirstCodingExercises {
         public static boolean isCatPlaying(boolean isSummer, int temperature){
         //logic need to work scenarios first
             if(isSummer && (temperature >= 25 && temperature <= 45)){
-                System.out.println("true");
+                System.out.println("summer and seasonable, true");
                 return true;
-            }else {
-                System.out.println("false");
+            }else if(!isSummer && (temperature >= 25 && temperature <= 35)) {
+                System.out.println("not summer but seasonable, true");
+                return true;
+            } else {
+                System.out.println("temp aint right, false");
                 return false;
             }
         }
@@ -344,7 +347,8 @@ public class FirstCodingExercises {
 //Playing Cat
 
 /*
-The cats spend most of the day playing. In particular, they play if the temperature is between 25 and 35 (inclusive). Unless it is summer, then the upper limit is 45 (inclusive) instead of 35.
+The cats spend most of the day playing. In particular, they play if the temperature is between 25 and 35 (inclusive). Unless it is summer,
+ then the upper limit is 45 (inclusive) instead of 35.
 
 
 Write a method isCatPlaying that has 2 parameters. Method needs to return true if the cat is playing, otherwise return false
