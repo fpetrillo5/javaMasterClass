@@ -9,7 +9,8 @@ public class SectionSix {
         //class5657Driver();
         //class58Driver();
         //class59Driver();
-        codingExercise13Driver();
+        //codingExercise13Driver();
+        codingExercise14();
 
 
 
@@ -182,6 +183,7 @@ public class SectionSix {
 
     }
 
+
     public static void printNumberInWord(int number){
         switch(number){
             case 0:
@@ -217,8 +219,35 @@ public class SectionSix {
             default:
                 System.out.println("OTHER");
                 break;
-
         }
+    }
+
+    public static void codingExercise14(){
+        getDaysInMonth(-45,-89); //-1
+        getDaysInMonth(0,0);//-1
+        getDaysInMonth(1,1);//1
+        getDaysInMonth(6,6);//1
+        getDaysInMonth(12,9999);//1
+        getDaysInMonth(13,10000);//-1
+        getDaysInMonth(45,544354);//-1
+        getDaysInMonth(-3,999);//-1
+        getDaysInMonth(4,-54);//-1
+
+    }
+
+
+    public static int getDaysInMonth(int month, int year){
+        if(month < 1 || month > 12){
+            System.out.println("-1");
+            return -1;
+        } else if(year < 1 || year > 9999){
+            System.out.println("-11");
+            return 1;
+        }
+
+
+        System.out.println("10");
+        return 10;
     }
 }
 
