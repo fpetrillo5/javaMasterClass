@@ -7,7 +7,8 @@ public class SectionSix {
          */
 
         //class5657Driver();
-        class58Driver();
+        //class58Driver();
+        class59Driver();
 
 
 
@@ -102,6 +103,70 @@ public class SectionSix {
             default:
                 System.out.println("the letter " + letter + " was not found");
                 break;
+        }
+    }
+
+    public static void class59Driver(){
+        printDayOfWeek(0);
+        printDayOfWeek(1);
+        printDayOfWeek(2);
+        printDayOfWeek(3);
+        printDayOfWeek(4);
+        printDayOfWeek(5);
+        printDayOfWeek(6);
+        printDayOfWeek(7);
+
+        printWeekDay(0);
+        printWeekDay(1);
+        printWeekDay(2);
+        printWeekDay(3);
+        printWeekDay(4);
+        printWeekDay(5);
+        printWeekDay(6);
+        printWeekDay(7);
+
+
+
+
+    }
+
+    public static void printDayOfWeek(int day){
+         String dayofWeek = switch (day){
+            case 0 -> {yield "Sunday";}
+            case 1 -> {yield "Monday";}
+            case 2 -> {yield "Tuesday";}
+            case 3 -> {yield "Wednesday";}
+            case 4 -> {yield "Thursday";}
+            case 5 -> {yield "Friday";}
+            case 6-> {yield "Saturday";}
+             default -> {
+                 {yield "Invalid Day";}
+             }
+        };
+         if(day < 6){
+             System.out.println(day + " is a " + dayofWeek);
+         } else {
+             System.out.println(day + " is an " + dayofWeek);
+         }
+
+    }
+    public static void printWeekDay(int day){
+        if (day == 0) {
+            System.out.println(day + " is Sunday");
+        } else if (day == 1) {
+            System.out.println(day + " is Monday");
+        } else if (day == 2) {
+            System.out.println(day + " is Tuesday");
+        } else if (day == 3) {
+            System.out.println(day + " is Wednesday");
+        } else if (day == 4) {
+            System.out.println(day + " is Thursday");
+        } else if (day == 5) {
+            System.out.println(day + " is Friday");
+        } else if (day == 6) {
+            System.out.println(day + " is Saturday");
+        } else {
+            System.out.println("Invalid Day");
         }
     }
 }
