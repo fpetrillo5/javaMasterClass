@@ -51,7 +51,9 @@ public class SectionSix {
             }
             default -> System.out.println("was not 1, 2,3,4,or 5");
         }
-        String month = "OCTOBER";
+       // regular switch argument String month = "OCTOBER";
+        // below is yield argument
+        String month = "xyz";
         System.out.println(month + " is in the " + getQuarter(month) + " quarter");
     }
 
@@ -61,7 +63,15 @@ public class SectionSix {
             case "APRIL", "MAY", "JUNE" -> "2nd";
             case "JULY", "AUGUST", "SEPTEMBER" -> "3rd";
             case "OCTOBER", "NOVEMBER", "DECEMBER" -> "4th";
-            default -> "bad";
+            // 1)default -> "bad";
+           // 2) default -> {
+               // 2)String badResponse = month + " is bad";
+                //2)return badResponse;
+            //2)}
+            default ->{
+                String badResponse = month + " is bad";
+                yield badResponse;
+            }
         };
     }
 }
@@ -88,7 +98,22 @@ you just get an error runtime?
 
 what if you want to do something in the case branch before
 returning a value?
-    need to create a code block
+    need to create a code block.
+    if you are going to use a code block like this in a switch expression.
+    we need to use yield and not return.
+
+    the word yield is a new keyword, introduced for the switch expression,
+    to return a value back.
+
+*when to use yield in a switch
+
+your switch statement is being used as a switch expression returning a
+value. your case label uses a code block, with opening and closing curly
+braces
+this code ->"1st"; is implicitly translated to -> {yield "1st";}
+
+yield has to be in a code block
+
  */
 
 //class 56 - the switch statement
