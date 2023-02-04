@@ -77,6 +77,18 @@ versions. You should use traditional if your code needs to be
 backwards compatible to earlier versions of java.
 
 it is always good idea to include a default case label
+
+enhanced switch is really an expression, meaning it resolves to a
+single value and can be assigned a variable or in this example,
+returned from the method. the default label is required under
+most conditions. there is an exception
+
+interesting, if you dont have a default, intellij doesnt warn you,
+you just get an error runtime?
+
+what if you want to do something in the case branch before
+returning a value?
+    need to create a code block
  */
 
 //class 56 - the switch statement
