@@ -6,7 +6,8 @@ public class SectionSix {
         create a corresponding driver class to whatever method i want to run.
          */
 
-        class5657Driver();
+        //class5657Driver();
+        class58Driver();
 
 
 
@@ -74,7 +75,38 @@ public class SectionSix {
             }
         };
     }
+
+    public static void class58Driver(){
+        switchChallenge('C');
+        switchChallenge('F');
+
+    }
+
+    public static void switchChallenge(char letter){
+        switch(letter){
+            case 'A':
+                System.out.println(letter+ " is Able");
+                break;
+            case 'B':
+                System.out.println(letter+ " is Bravo");
+                break;
+            case 'C':
+                System.out.println(letter+ " is Charlie");
+                break;
+            case 'D':
+                System.out.println(letter+ " is Dog");
+                break;
+            case 'E':
+                System.out.println(letter+ " is Easy");
+                break;
+            default:
+                System.out.println("the letter " + letter + " was not found");
+                break;
+        }
+    }
 }
+
+
 //class 57 - more switch statement
 
 /*
