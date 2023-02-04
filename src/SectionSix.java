@@ -8,7 +8,8 @@ public class SectionSix {
 
         //class5657Driver();
         //class58Driver();
-        class59Driver();
+        //class59Driver();
+        codingExercise13Driver();
 
 
 
@@ -167,6 +168,56 @@ public class SectionSix {
             System.out.println(day + " is Saturday");
         } else {
             System.out.println("Invalid Day");
+        }
+    }
+
+    public static void codingExercise13Driver(){
+        printNumberInWord(-99);
+        printNumberInWord(0);
+        printNumberInWord(1);
+        printNumberInWord(5);
+        printNumberInWord(9);
+        printNumberInWord(10);
+        printNumberInWord(444);
+
+    }
+
+    public static void printNumberInWord(int number){
+        switch(number){
+            case 0:
+                System.out.println("ZERO");
+                break;
+            case 1:
+                System.out.println("ONE");
+                break;
+            case 2:
+                System.out.println("TWO");
+                break;
+            case 3:
+                System.out.println("THREE");
+                break;
+            case 4:
+                System.out.println("FOUR");
+                break;
+            case 5:
+                System.out.println("FIVE");
+                break;
+            case 6:
+                System.out.println("SIX");
+                break;
+            case 7:
+                System.out.println("SEVEN");
+                break;
+            case 8:
+                System.out.println("EIGHT");
+                break;
+            case 9:
+                System.out.println("NINE");
+                break;
+            default:
+                System.out.println("OTHER");
+                break;
+
         }
     }
 }
