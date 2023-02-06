@@ -223,31 +223,82 @@ public class SectionSix {
     }
 
     public static void codingExercise14(){
-        getDaysInMonth(-45,-89); //-1
-        getDaysInMonth(0,0);//-1
-        getDaysInMonth(1,1);//1
-        getDaysInMonth(6,6);//1
-        getDaysInMonth(12,9999);//1
-        getDaysInMonth(13,10000);//-1
-        getDaysInMonth(45,544354);//-1
-        getDaysInMonth(-3,999);//-1
-        getDaysInMonth(4,-54);//-1
+//        getDaysInMonth(-45,-89); //-1
+//        getDaysInMonth(0,0);//-1
+//        getDaysInMonth(1,1);//1
+//        getDaysInMonth(6,6);//1
+//        getDaysInMonth(12,9999);//1
+//        getDaysInMonth(13,10000);//-1
+//        getDaysInMonth(45,544354);//-1
+//        getDaysInMonth(-3,999);//-1
+//        getDaysInMonth(4,-54);//-1
+        System.out.println(getDaysInMonth(2,1700));//28
+        System.out.println(getDaysInMonth(2,2100));//28
+        System.out.println(getDaysInMonth(2,1600));//29
+        System.out.println(getDaysInMonth(2,1601));//28
+        System.out.println(getDaysInMonth(2,2020));//29
+        System.out.println(getDaysInMonth(2,3456));//28?
+        System.out.println(getDaysInMonth(2,2023));//28
+
+        System.out.println(getDaysInMonth(1,2020));//28
+        System.out.println(getDaysInMonth(2,2020));//28
+        System.out.println(getDaysInMonth(2,2018));//28
+        System.out.println(getDaysInMonth(-1,2020));//28
+        System.out.println(getDaysInMonth(1,-2020));//28
+
+        System.out.println(getDaysInMonth(4,2020));//28
+        System.out.println(getDaysInMonth(12,2020));//28
 
     }
 
 
     public static int getDaysInMonth(int month, int year){
         if(month < 1 || month > 12){
-            System.out.println("-1");
             return -1;
         } else if(year < 1 || year > 9999){
-            System.out.println("-11");
-            return 1;
+            return -1;
         }
 
+        switch (month) {
+            case 2:
+                if (isLeapYear(year)) {
+                    return 29;
+                } else {
+                    return 28;
+                }
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                return 31;
+            default:
+                return 30;
+        }
+    }
 
-        System.out.println("10");
-        return 10;
+    public static boolean isLeapYear(int year){
+
+        if(!(year >= 1 && year <= 9999)) {
+            System.out.println("The year needs to be larger than 0 and smaller than 10000");
+            return false;
+        }
+        //if false divisible by 4, return false
+        if(!(year % 4 == 0)){
+            System.out.println("not a leap year, " + year + " not divisible by 4");
+            return false;
+        } else if(!(year % 100 == 0)){
+            System.out.println("it is a leap year, " + year + " not divisible by 100");
+            return true;
+        } else if (year % 400 == 0){
+            System.out.println("it is a leap year, " + year + " divisible by 400");
+            return true;
+        } else {
+            System.out.println("not a leap year, " + year + " not divisible by 400");
+            return false;
+        }
     }
 }
 
