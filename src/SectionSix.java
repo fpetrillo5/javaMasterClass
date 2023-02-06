@@ -10,7 +10,9 @@ public class SectionSix {
         //class58Driver();
         //class59Driver();
         //codingExercise13Driver();
-        codingExercise14();
+        //codingExercise14();
+       // class60Driver();
+        class61Driver();
 
 
 
@@ -300,11 +302,106 @@ public class SectionSix {
             return false;
         }
     }
+
+    public static void class60Driver(){
+        class60();
+
+
+
+    }
+
+    public static void class60(){
+        for(int counter = 1; counter <= 5; counter++){
+            System.out.println(counter);
+        }
+
+        for(double rate = 7.5; rate <= 10.0; rate += 0.25){
+            double interestAmount = calculateInterest(100, rate);
+            if(interestAmount > 8.5)
+                break;
+            System.out.println("$100 at " + rate + "% interest = $" + interestAmount);
+
+        }
+    }
+
+    public static double calculateInterest(double amount, double interestRate){
+        return (amount * (interestRate / 100));
+    }
+
+    public static void class61Driver(){
+//        System.out.println("0 is " + ((isPrime(0) ? "": "NOT ") + "a prime number" ));
+//        System.out.println("1 is " + ((isPrime(1) ? "": "NOT ") + "a prime number" ));
+//        System.out.println("2 is " + ((isPrime(2) ? "": "NOT ") + "a prime number" ));
+//        System.out.println("3 is " + ((isPrime(3) ? "": "NOT ") + "a prime number" ));
+//        System.out.println("8 is " + ((isPrime(8) ? "": "NOT ") + "a prime number" ));
+//        System.out.println("17 is " + ((isPrime(17) ? "": "NOT ") + "a prime number" ));
+
+        System.out.println(forLoopChallenge(0,1000));
+        System.out.println(forLoopChallenge(900,1000));
+        System.out.println(forLoopChallenge(500,1000));
+        System.out.println(forLoopChallenge(0,100));
+        System.out.println(forLoopChallenge(10,50));
+
+
+    }
+    public static boolean isPrime(int wholeNumber){
+        if(wholeNumber <=  2){
+            return (wholeNumber == 2);
+        }
+
+        for(int divisor = 2; divisor <= wholeNumber/2; divisor++){
+            if(wholeNumber % divisor == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static int forLoopChallenge(int begin, int end){
+        if(end>1000){
+            System.out.println("please enter a ending less than a 1000");
+            return -1;
+        }
+        int primeCounter = 0;
+        for(int i = begin ; i <= end;i++){
+
+            if(isPrime(i)){
+                primeCounter++;
+                System.out.println(i + " is a prime number");
+                if(primeCounter == 3){
+                    break;
+                }
+            }
+        }
+         return primeCounter;
+    }
+
+
+
 }
 
 //class 60 - for loop
 
 /*
+for (init; expression; increment){
+//block of statements
+there are 3 parts to the basic for statement's declaration
+init
+    the initialization section declares or sets state, usually declaring and
+    initializing a loop variable, before the loop begins processing.
+
+expression
+    once it becomes false, will end the loop processing
+
+increment
+    is executed after the expression is tested, and is generally the place
+    where the loop variable is incremented
+
+*break statement
+    a break statement transfers control out of an enclosing statement
+    we have seen the break statement in the switch statement, but it can
+    also be used in a loop. (funny, i never noticed they are the same)
+
 
  */
 
