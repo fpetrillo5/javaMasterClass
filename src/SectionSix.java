@@ -12,7 +12,9 @@ public class SectionSix {
         //codingExercise13Driver();
         //codingExercise14();
        // class60Driver();
-        class61Driver();
+        //class61Driver();
+        //class62Driver();
+        codingExercise15Driver();
 
 
 
@@ -376,9 +378,92 @@ public class SectionSix {
          return primeCounter;
     }
 
-
+public static void class62Driver(){
+    System.out.println("sum is: " + ThreeFiveChallenge(5, 50));
+    System.out.println("sum is: " + ThreeFiveChallenge(1, 1000));
 
 }
+
+    public static int ThreeFiveChallenge(int begin, int end){
+        if(begin < 0 && end>1000){
+            System.out.println("please enter a ending less than a 1000");
+            return -1;
+        }
+        int sum = 0;
+        int counter=0;
+
+        for(int i = begin ; i <= end;i++){
+            if(i%3 == 0 && i%5 ==0){
+                System.out.println(i);
+                sum += i;
+                counter++;
+                if(counter ==5){
+                    break;
+                }
+            }
+        }
+        return sum;
+    }
+
+    public static void codingExercise15Driver(){
+        System.out.println(sumOdd(1,100));
+        System.out.println(sumOdd(-1,100));
+        System.out.println(sumOdd(100,100));
+        System.out.println(sumOdd(13,13));
+        System.out.println(sumOdd(100,-100));
+        System.out.println(sumOdd(100,1000));
+    }
+
+    public static boolean isOdd(int number){
+        if(number < 1){
+            System.out.println("please enter a positive number");
+            return false;
+        }
+        if(number % 2 == 1){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static int sumOdd(int start, int end){
+        if(end < start || start < 0 || end <0){
+            return -1;
+        }
+        int sum =0;
+        for(int i = start; i <= end;i++){
+            if(isOdd(i)){
+                sum +=i;
+            }
+        }
+        return sum;
+    }
+
+}
+//class 62 - sum3 and 5 challenge and debugger fun
+
+/*
+
+ */
+
+//intellij debugger youtube basics
+/*
+why debug
+    find and fix bugs
+    code analysis
+        gives you the runtime values
+        what parts get executed
+        getting familiar with the new code
+    change behavior of your app
+        by changing the inner state (data) without changing the code
+        switch app state without having to restart
+    add more logging on the fly
+    ui painting debugging - can view images
+    analyze memory issues
+    set a breakpoint bomb
+
+
+ */
 
 //class 60 - for loop
 
