@@ -14,7 +14,9 @@ public class SectionSix {
        // class60Driver();
         //class61Driver();
         //class62Driver();
-        codingExercise15Driver();
+        //codingExercise15Driver();
+        //class64Driver();
+        class65Driver();
 
 
 
@@ -439,11 +441,75 @@ public static void class62Driver(){
         return sum;
     }
 
+    static public void class64Driver(){
+        class64();
+    }
+
+    public static void class64(){
+        for (int i = 1; i <=5; i++){
+            System.out.println(i);
+        }
+        int j =1;
+
+        while(true){ // this is same as do while loop
+            if(j >5)
+                break;
+            System.out.println(j);
+            j++;
+        }
+        int k = 1;
+        boolean isReady = false;
+        do{
+            if(k >=5)
+                break;
+            System.out.println(k);
+            k++;
+        }while(isReady);
+
+        int number = 0;
+        while(number < 50){
+            number +=5;
+            if(number % 25 ==0){
+                continue;// oh so the continue just skips those conditions in
+                //the loop, unlike a break, which just shuts the whole thing down
+            }
+            System.out.print(number + "_");
+        }
+    }
+
+    public static void class65Driver(){
+        class65(10,100);
+
+    }
+
+    public static boolean isEvenNumber(int number){
+        if(number % 2 == 0)
+            return true;
+        else
+            return false;
+    }
+
+    public static void class65(int start, int end){
+        while (start<=end){
+            if(isEvenNumber(start)){
+                System.out.println(start);
+            }
+            start++;
+        }
+    }
+
 }
-//class 62 - sum3 and 5 challenge and debugger fun
+
+//class 65 - while loop challenge
 
 /*
 
+ */
+//class 64 - the while and do while statements
+
+/*
+continue statement - will stop executing the current iteration of block of code
+in a loop, and start a new iteration.
  */
 
 //intellij debugger youtube basics
