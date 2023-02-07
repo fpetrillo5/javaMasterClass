@@ -17,7 +17,8 @@ public class SectionSix {
         //codingExercise15Driver();
         //class64Driver();
         //class65Driver();
-        class66Driver();
+        //class66Driver();
+        isPalindromeDriver();
 
 
 
@@ -519,6 +520,48 @@ public static void class62Driver(){
 
         }while(number > 0);
         return sum;
+    }
+
+    public static void isPalindromeDriver(){
+        //System.out.println(isPalindrome(1221));
+        //System.out.println(isPalindrome(0));
+        //System.out.println(isPalindrome(5));
+        //System.out.println(isPalindrome(1278));
+        //System.out.println(isPalindrome(-1221));
+       // System.out.println(isPalindrome(-12278));
+        System.out.println(isPalindrome(-1221));
+        System.out.println(isPalindrome(707));
+        System.out.println(isPalindrome(11212));
+    }
+
+    public static boolean isPalindrome(int number){
+        boolean isNegative = false;
+        double reverse =0;
+        int originalNumber = number;
+        if(originalNumber < 0){
+            number *=-1;
+            isNegative = true;
+        }
+        double glove =0;
+
+        do{
+           glove = number % 10;
+           reverse = reverse + (glove / 10);
+           reverse = reverse * 10 ;
+           number /= 10;
+           glove = 0;
+
+        }while(number > 0);
+
+        if(isNegative){
+            reverse *= -1;
+        }
+
+        if(originalNumber == reverse){
+            return true;
+            } else {
+            return false;
+        }
     }
 
 }
