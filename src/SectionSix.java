@@ -16,7 +16,8 @@ public class SectionSix {
         //class62Driver();
         //codingExercise15Driver();
         //class64Driver();
-        class65Driver();
+        //class65Driver();
+        class66Driver();
 
 
 
@@ -496,6 +497,28 @@ public static void class62Driver(){
             }
             start++;
         }
+    }
+
+    public static void class66Driver(){
+        System.out.println(sumDigits(555));
+        System.out.println(sumDigits(5));
+        System.out.println(sumDigits(999999999));
+        System.out.println(sumDigits(0));
+        System.out.println(sumDigits(-78));
+
+    }
+
+    public static int sumDigits(int number){
+        if(number < 0){
+            return -1;
+        }
+        int sum = 0;
+        do{
+         sum = sum + (number % 10);
+         number /=10;
+
+        }while(number > 0);
+        return sum;
     }
 
 }
