@@ -18,7 +18,8 @@ public class SectionSix {
         //class64Driver();
         //class65Driver();
         //class66Driver();
-        isPalindromeDriver();
+        //isPalindromeDriver();
+        sumFirstAndLastDigitDriver();
 
 
 
@@ -562,6 +563,43 @@ public static void class62Driver(){
             } else {
             return false;
         }
+    }
+
+    public static void sumFirstAndLastDigitDriver(){
+        System.out.println(sumFirstAndLastDigit(252));
+        System.out.println(sumFirstAndLastDigit(257));
+        System.out.println(sumFirstAndLastDigit(0));
+        System.out.println(sumFirstAndLastDigit(5));
+        System.out.println(sumFirstAndLastDigit(-10));
+        System.out.println(sumFirstAndLastDigit(10));
+        System.out.println(sumFirstAndLastDigit(11));
+        System.out.println(sumFirstAndLastDigit(99));
+
+    }
+
+    public static int sumFirstAndLastDigit(int number){
+        if(number < 0)
+            return -1;
+        int sum = 0;
+        int originalNumber = number;
+        if(number <=9){
+            sum = number  + number;
+            return sum;
+        }
+
+        do{
+            if(number == originalNumber){
+                sum = number % 10;
+                number /= 10;
+            } else if(number <= 9){
+                sum += number;
+                number /= 10;
+            } else {
+                number /= 10;
+            }
+        }while(number > 0);
+
+        return sum;
     }
 
 }
