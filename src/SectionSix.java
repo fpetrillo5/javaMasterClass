@@ -22,7 +22,9 @@ public class SectionSix {
         //sumFirstAndLastDigitDriver();
         //getEvenDigitSumDriver();
         //hasSharedDigitDriver();
-        hasSameLastDigitDriver();
+        //hasSameLastDigitDriver();
+        //printFactorsDriver();
+        getGreatestCommonDivisorDriver();
 
 
 
@@ -664,19 +666,33 @@ public static void class62Driver(){
     }
 
     public static void hasSameLastDigitDriver(){
-        System.out.println(hasSameLastDigit(0,45,456));
-        System.out.println(hasSameLastDigit(10,45,456));
-        System.out.println(hasSameLastDigit(1000,45,4560));
-        System.out.println(hasSameLastDigit(9,45,456));
+//        System.out.println(hasSameLastDigit(0,45,456));
+//        System.out.println(hasSameLastDigit(10,45,456));
+//        System.out.println(hasSameLastDigit(1000,45,4560));
+//        System.out.println(hasSameLastDigit(9,45,456));
+
+        System.out.println(hasSameLastDigit(41,22,71));
+        System.out.println(hasSameLastDigit(23,32,42));
+        System.out.println(hasSameLastDigit(9,99,999));
 
     }
 
     public  static boolean hasSameLastDigit(int num1, int num2, int num3){
         if(!isValid(num1) || !isValid(num2) || !isValid(num3))
             return false;
-        else
-            return true;
 
+        int glove1 = 0;
+        int glove2 = 0;
+        int glove3 = 0;
+
+        glove1 = num1 % 10;
+        glove2 = num2 % 10;
+        glove3 = num3 % 10;
+
+        if((glove1 == glove2) || (glove1 == glove3) || (glove2 == glove3))
+            return true;
+        else
+            return false;
     }
 
     public static boolean isValid(int number){
@@ -684,6 +700,50 @@ public static void class62Driver(){
             return false;
         else
             return true;
+    }
+
+    public static void printFactorsDriver(){
+        printFactors(6);
+        printFactors(32);
+        printFactors(10);
+        printFactors(-1);
+
+    }
+
+    public static void printFactors(int number){
+        if(number < 1)
+            System.out.println("Invalid Value");
+
+        for(int i = 1; i <= number; i ++){
+            if(number % i == 0)
+                System.out.print(i + " ");
+        }
+        System.out.println();
+
+    }
+
+    public static void getGreatestCommonDivisorDriver(){
+        System.out.println(getGreatestCommonDivisor(12,30));
+        System.out.println(getGreatestCommonDivisor(25,15));
+        System.out.println(getGreatestCommonDivisor(9,18));
+        System.out.println(getGreatestCommonDivisor(81,153));
+
+    }
+
+    public static int getGreatestCommonDivisor(int first, int second){
+        if((first < 10) || (second < 10))
+            return -1;
+        int gcd = 0;
+
+        //maybe nested for loops? keep a max and return it
+        for(int i = 1;i <= first; i++){
+            if(first % i == 0){
+                if(second % i == 0){
+                    gcd = i;
+                }
+            }
+        }
+        return gcd;
     }
 
 }
