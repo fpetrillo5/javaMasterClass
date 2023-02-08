@@ -19,7 +19,8 @@ public class SectionSix {
         //class65Driver();
         //class66Driver();
         //isPalindromeDriver();
-        sumFirstAndLastDigitDriver();
+        //sumFirstAndLastDigitDriver();
+        getEvenDigitSumDriver();
 
 
 
@@ -597,6 +598,30 @@ public static void class62Driver(){
             } else {
                 number /= 10;
             }
+        }while(number > 0);
+
+        return sum;
+    }
+
+    public static void getEvenDigitSumDriver(){
+        System.out.println(getEvenDigitSum(123456789));
+        System.out.println(getEvenDigitSum(252));
+        System.out.println(getEvenDigitSum(-22));
+
+    }
+
+    public static int getEvenDigitSum(int number){
+        if(number < 0)
+            return -1;
+        int sum = 0;
+        int glove = 0;
+        do{
+            glove = number % 10;
+            if(glove % 2 == 0){
+                sum += glove;
+            }
+            number /= 10;
+            glove = 0;
         }while(number > 0);
 
         return sum;
