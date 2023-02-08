@@ -21,7 +21,8 @@ public class SectionSix {
         //isPalindromeDriver();
         //sumFirstAndLastDigitDriver();
         //getEvenDigitSumDriver();
-        hasSharedDigitDriver();
+        //hasSharedDigitDriver();
+        hasSameLastDigitDriver();
 
 
 
@@ -660,6 +661,29 @@ public static void class62Driver(){
             return true;
         else
             return false;
+    }
+
+    public static void hasSameLastDigitDriver(){
+        System.out.println(hasSameLastDigit(0,45,456));
+        System.out.println(hasSameLastDigit(10,45,456));
+        System.out.println(hasSameLastDigit(1000,45,4560));
+        System.out.println(hasSameLastDigit(9,45,456));
+
+    }
+
+    public  static boolean hasSameLastDigit(int num1, int num2, int num3){
+        if(!isValid(num1) || !isValid(num2) || !isValid(num3))
+            return false;
+        else
+            return true;
+
+    }
+
+    public static boolean isValid(int number){
+        if(number < 10 || number > 1000)
+            return false;
+        else
+            return true;
     }
 
 }
