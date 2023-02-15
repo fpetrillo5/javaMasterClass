@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class SectionSix {
     public static void main(String[] args){
         /*we are just going to put driver methods in main from now on.
@@ -24,7 +26,8 @@ public class SectionSix {
         //hasSharedDigitDriver();
         //hasSameLastDigitDriver();
         //printFactorsDriver();
-        getGreatestCommonDivisorDriver();
+        //getGreatestCommonDivisorDriver();
+        class70Driver();
 
 
 
@@ -746,7 +749,143 @@ public static void class62Driver(){
         return gcd;
     }
 
+    public static void class70Driver(){
+        String currentYear = "2023";
+
+
+        try {
+            System.out.println(getInputFromConsole(Integer.parseInt(currentYear)));
+        } catch (NullPointerException e){
+            System.out.println((getInputFromScanner(Integer.parseInt(currentYear))));
+        }
+
+    }
+
+    public static String getInputFromConsole(int currentyear){
+        String name = System.console().readLine("Hi, whats your name?");
+        System.out.println("Hi " + name + ", Thanks for taking the course!" );
+
+        String dateOfBirth = System.console().readLine("what year were you born?");
+        int age = currentyear - Integer.parseInt(dateOfBirth);
+        return "You are " + age + " years old";
+    }
+
+    public static String getInputFromScanner(int currentYear){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("hi, what is your name?");
+        String name = scanner.nextLine();
+        System.out.println("Hi " + name + ", Thanks for taking the course!" );
+        System.out.println("what year were you born?");
+        String dateOfBirth = scanner.nextLine();
+        int age = currentYear - Integer.parseInt(dateOfBirth);
+
+        return  "so you are " + age + " years old";
+    }
+
 }
+
+//class 71- exception handling and intro to scanner
+/*
+*what is an exception
+* an exception is an error that happens in code
+* some types of errors can be predicted and named
+* null pointer exception - npe (which is the error we saw when we tried to
+* run our code using system.console
+*
+* catching an exception
+* an exception is caught, first by creating a code block around the code,
+* that might get the error. this is done with the try statement code block
+* the Try statement
+* try statement has 2 code blocks
+* the first is declared directly after the try keyword, and this coder block
+* ends, and is followed by the declaration of the catch keyword
+* the catch keyword includes the declaration of variables, in parentheses,
+* and then has its own code block
+* try - statements that might get errors
+* catch - code to handle the exception
+*
+* The Scanner class
+* the scanner class is described as a simple text scanner, which can
+* parse primitive types and strings. to use the scanner class, we have to
+* create an instance of scanner.
+*
+* new keyword
+* the new keyword is used in what java calls, a class instance creation
+* expression. ClassName varName = new ClassName();
+*
+* instantiating Scanner
+* for reading input from the console or terminal, we instantiate a scanner
+* object using new, followed by the scanner class name, and passing in
+* System.in, in the parentheses.
+* Scanner sc = new Scanner(System.in);
+* for reading input from a file, we instantiate a scanner object using
+* new again with the Scanner class name, but pass in a File object, in the
+* parentheses.
+* File is another class provided by java, for reading and writing files
+* Scanner sc = new Scanner(new File("nameOfFile"));
+*
+* Using the import statement
+* we havent talked about the import statement yet, but this statement lets
+* us use classes from other people's code.
+* In this case, java provides a library of code, which includes the
+* Scanner class, in a library called java.util.
+* import java.util.Scanner;
+*
+*Scanner is one of java's built in classes and it allows us to read user
+* input. we can parse primitive types and strings, using methods from
+* this scanner
+ */
+//class 70 -Parsing Values and Reading Input using System.console()
+/*
+when we read data in, from either a file, or from user input,its common
+for the data to be initially a string, which we will need to convert to
+a numeric value.
+
+*reading data from the console
+system,in
+    like system.out, java provides system.in which can read input from
+    the console or terminal. it is not east to use for beginners, and
+    lots of code has been built around it to make it easier.
+System.console
+    this is java's solution for easier support for reading a single line
+    and prompting user information. although this is easy to use, it doesnt
+    work with ide's because these environments disable it.
+Command line arguments
+    This is calling the java program and specifying data in the call. this
+    is very commonly used but doesnt let us create an interactive app
+    in a loop in java.
+Scanner
+    the scanner class was built to be a common way to read input, either
+    using System.in or a file. For beginners, its much easier to understand
+    than the bare bones System.in
+
+we have to run system.console in intellij terminal session because you
+will get Cannot invoke "java.io.Console.readLine(String, Object[]) error
+click on Terminal tab on bottom. its just like terminal, you can navigate
+the same way.
+ */
+//class 69- The class, the object, static & instance fields and methods
+/*
+class can be described as a custom data type, special code block that
+contains methods.
+an object is an instance of a class.
+object and instance are interchangeable terms (the fact that he calls
+this out now is amazing for new learners)
+ */
+//class 68 - local variables and scope
+/*
+a local variable is called local, because it is available for use by the
+code block in which it was declared. It is also available to code blocks
+that are contained by a declaring block.
+*scope
+scope describes the accessibility of a variable. in scope means the
+variable can be used by an executing block or any nested blocks. out
+of scope means the variable is no longer available.
+*best practices
+to declare and initialize variables in the same place if possible. and to
+declare variables in the narrowest scope possible
+ */
 
 //class 65 - while loop challenge
 
