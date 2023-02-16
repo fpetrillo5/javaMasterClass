@@ -28,7 +28,8 @@ public class SectionSix {
         //printFactorsDriver();
         //getGreatestCommonDivisorDriver();
         //class70Driver();
-        canPackDriver();
+        //canPackDriver();
+        getLargestPrimeDriver();
 
 
 
@@ -826,7 +827,52 @@ public static void class62Driver(){
         } else
             return true;
     }
-}
+
+    public static void getLargestPrimeDriver(){
+        //System.out.println(getLargestPrime(-2));
+        //System.out.println(getLargestPrime(0));
+       // System.out.println(getLargestPrime(1));
+        System.out.println(getLargestPrime(2));
+        System.out.println(getLargestPrime(8));
+        System.out.println(getLargestPrime(7));
+        System.out.println(getLargestPrime(17));
+        System.out.println(getLargestPrime(10));
+        System.out.println(getLargestPrime(253));
+        System.out.println(getLargestPrime(21));
+        System.out.println(getLargestPrime(217));
+        System.out.println(getLargestPrime(0));
+        System.out.println(getLargestPrime(45));
+        System.out.println(getLargestPrime(-1));
+
+    }
+
+    public static int getLargestPrime(int number){
+        if(number < 2)
+            return -1;
+
+        int largestPrime = 2;
+        boolean isPrime = true;
+        for(int i = 2; i < number; i++){
+            if(number % i == 0){
+                for(int j = 2; j < i; j++){
+                    isPrime =true;
+                    if(i % j == 0){
+                        isPrime = false;
+                        break;
+                        }
+                    }
+                if(isPrime)
+                    largestPrime = i;
+                }
+            }
+        if((largestPrime == 2) && (number % 2 !=0)){
+            largestPrime = number;
+        }
+        return largestPrime;
+        }
+
+    }
+
 
 //class 71- exception handling and intro to scanner
 /*
