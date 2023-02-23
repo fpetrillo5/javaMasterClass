@@ -29,7 +29,18 @@ public class SectionSix {
         //getGreatestCommonDivisorDriver();
         //class70Driver();
         //canPackDriver();
-        getLargestPrimeDriver();
+        //getLargestPrimeDriver();
+        //printSquareStar(5);
+        //getDigitCountDriver();
+        //reverseDriver();
+        numberToWords(123);
+        System.out.println();
+        numberToWords(1010);
+        System.out.println();
+        numberToWords(1000);
+        System.out.println();
+        numberToWords(-12);
+
 
 
 
@@ -871,7 +882,130 @@ public static void class62Driver(){
         return largestPrime;
         }
 
+
+        public static void printSquareStar(int number){
+        int rowCount = number;
+
+        if(number < 5)
+            System.out.println("Invalid Value");
+        else{
+            for(int i = 0; i < number; i++){
+                for(int j = 0; j < rowCount; j++){
+                    if(i == 0 || i == (number - 1)){
+                        System.out.print("*");
+                    }
+                   else if(j == 0 || j == (rowCount - 1)) {
+                        System.out.print("*");
+                    }
+                   else if(i == j){
+                       System.out.print("*");
+                    }
+                   else if(j == (rowCount - 1) - i){
+                       System.out.print("*");
+                    }
+                   else{
+                       System.out.print(" ");
+                    }
+                }
+                System.out.println();
+            }
+        }
     }
+
+    public static void getDigitCountDriver(){
+        System.out.println(getDigitCount(0)); //1
+        System.out.println(getDigitCount(-4)); //-1
+        System.out.println(getDigitCount(1)); //1
+        System.out.println(getDigitCount(077)); //2
+        System.out.println(getDigitCount(67596978));//8
+        System.out.println(getDigitCount(10));//2
+        System.out.println(getDigitCount(123));//3
+        System.out.println(getDigitCount(-12));//-1
+        System.out.println(getDigitCount(5200));//4
+
+
+    }
+
+    public static void reverseDriver(){
+        System.out.println(reverse(-121));
+        System.out.println(reverse(1212));
+        System.out.println(reverse(1234));
+        System.out.println(reverse(100));
+
+    }
+
+    public static int reverse(int number){
+        int reverseNum = 0;
+        while(number != 0){
+            reverseNum *= 10;
+            reverseNum += (number % 10);
+            number /= 10;
+        }
+        return reverseNum;
+    }
+
+    public static int getDigitCount(int number){
+        if(number < 0)
+            return -1;
+        int count = 0;
+
+        if(number == 0)
+            return 1;
+
+        while(number != 0){
+            number /= 10;
+            count++;
+        }
+        return count;
+    }
+
+    public static void numberToWords(int number){
+        if(number < 0)
+            System.out.println("Invalid Value");
+        else{
+            int digitCount = getDigitCount(number);
+            number = reverse(number);
+            for(int i = digitCount; i > 0; i--){
+                switch (number % 10){
+                    case 1:
+                        System.out.print("One");
+                        break;
+                    case 2:
+                        System.out.print("Two");
+                        break;
+                    case 3:
+                        System.out.print("Three");
+                        break;
+                    case 4:
+                        System.out.print("Four");
+                        break;
+                    case 5:
+                        System.out.print("Five");
+                        break;
+                    case 6:
+                        System.out.print("Six");
+                        break;
+                    case 7:
+                        System.out.print("Seven");
+                        break;
+                    case 8:
+                        System.out.print("Eight");
+                        break;
+                    case 9:
+                        System.out.print("Nine");
+                        break;
+                    default:
+                        System.out.print("Zero");
+                }
+                number /= 10;
+               System.out.print(" ");
+            }
+
+        }
+
+    }
+
+}
 
 
 //class 71- exception handling and intro to scanner
