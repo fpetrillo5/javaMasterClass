@@ -33,13 +33,15 @@ public class SectionSix {
         //printSquareStar(5);
         //getDigitCountDriver();
         //reverseDriver();
-        numberToWords(123);
-        System.out.println();
-        numberToWords(1010);
-        System.out.println();
-        numberToWords(1000);
-        System.out.println();
-        numberToWords(-12);
+//        numberToWords(123);
+//        System.out.println();
+//        numberToWords(1010);
+//        System.out.println();
+//        numberToWords(1000);
+//        System.out.println();
+//        numberToWords(-12);
+        //getInputFromScannerDriver();
+        readingUserInputChallenge();
 
 
 
@@ -333,9 +335,6 @@ public class SectionSix {
 
     public static void class60Driver(){
         class60();
-
-
-
     }
 
     public static void class60(){
@@ -783,6 +782,69 @@ public static void class62Driver(){
         return "You are " + age + " years old";
     }
 
+    public static void readingUserInputChallenge(){
+        /*things to worry about 1) chars 2) decimals 3) too big for
+        an int, 4) too small for an int 5) if it is a valid but
+        the accumulation will be too big for an int. 6) if it is a
+        valid int but the accumulation will be too small for an int.
+
+        5 & 6 can be handled by passing the current total and the
+        next number coming in.
+
+        we can have number represent all the inputs, running total,
+        flag for the loop, and count for the 5 inputs
+         */
+        Scanner sc = new Scanner(System.in);
+        int total = 0;
+        double check = 0.0;
+        int number = 0;
+        int count = 0;
+        int falseCount = 1;
+        boolean flag = false;
+
+        System.out.println("would you like to play a game?");
+        System.out.println("enter 5 integers, one at a time.");
+        do{
+
+            System.out.println("Enter number #" + falseCount);
+            try{
+                check = checkInput(total, sc.nextLine());
+                if(check  == -1.1){
+                    System.out.println("Invalid Number");
+                    //i think this knocks out issues 5 & 6
+                } else{
+                    number = (int) check;
+                    total += number;
+                    count++;
+                    falseCount++;
+                    flag = count < 5 ? false : true;
+                }
+
+            }catch(NumberFormatException nfe){
+                System.out.println("Invalid number");
+                //this takes care of issues 1-4
+            }
+
+        }while(!flag);
+
+        System.out.println("the total of the 5 numbers you entered is " +
+                total);
+    }
+
+    public static double checkInput(int total, String number){
+        int possibleMax = Integer.MAX_VALUE - total;
+        int possibleMin = Integer.MIN_VALUE + total;
+        int input = Integer.parseInt(number);
+
+        if((input > possibleMax) || (input < possibleMin))
+            return -1.1;
+        return input;// this might be an issue but i guess its fine
+    }
+
+    public static void getInputFromScannerDriver(){
+        System.out.println(getInputFromScanner(2023));
+    }
+
     public static String getInputFromScanner(int currentYear){
         Scanner scanner = new Scanner(System.in);
 
@@ -790,10 +852,34 @@ public static void class62Driver(){
         String name = scanner.nextLine();
         System.out.println("Hi " + name + ", Thanks for taking the course!" );
         System.out.println("what year were you born?");
-        String dateOfBirth = scanner.nextLine();
-        int age = currentYear - Integer.parseInt(dateOfBirth);
+        boolean validDOB = false;
+        int age = 0;
+        do{
+            System.out.println("Enter a year of birth >= " +
+                    (currentYear - 125) + " and <= " + currentYear);
+            try{
+                age = checkData(currentYear,scanner.nextLine());
+                validDOB = age < 0 ? false : true;
+            } catch(NumberFormatException badUserData){
+                System.out.println("Characters not allowed!! Try again.");
+            }
+
+        }while(!validDOB);
+
+
+        //int age = currentYear - Integer.parseInt(dateOfBirth);
 
         return  "so you are " + age + " years old";
+    }
+
+    public static int checkData(int currentYear, String dateOfBirth){
+        int dob = Integer.parseInt(dateOfBirth);
+        int minimumYear = currentYear - 125;
+
+        if(dob < minimumYear || dob > currentYear)
+            return -1;
+
+        return currentYear - dob;
     }
 
     public static void canPackDriver(){
@@ -1007,7 +1093,27 @@ public static void class62Driver(){
 
 }
 
+//class 72 - reading input with scanner
+/*
+validation method
+you can use scanner.nextline() as an argument to a method
 
+NumberFormatException is an unchecked exception in java.
+NumberFormatException is thrown when attempting to convert an
+alphanumeric string to an integer. Since nfe is an unchecked
+exception, it does not need to be declared in the throws clause of a
+method or constructor. It can be handled in code using a try-catch
+https://rollbar.com/blog/java-numberformatexception/#
+
+in the past 2 classes, we learned 2 different ways to get user input.
+we transformed String data, to Integer data, so we could do
+calculations. We learned that System.console doesnt work in intellij,
+but Scanner does. We saw that we can use exception handling, to check
+which way will work, and the code will execute a different method, if
+run in intellij or on the command line or terminal. we also added
+validation to our second method, as well as a do while loop statement
+to keep trying to get a valid date of birth from the user
+ */
 //class 71- exception handling and intro to scanner
 /*
 *what is an exception
