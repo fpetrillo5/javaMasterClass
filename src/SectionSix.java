@@ -42,7 +42,8 @@ public class SectionSix {
 //        numberToWords(-12);
         //getInputFromScannerDriver();
         //readingUserInputChallenge();
-        minMaxChallenge();
+        //minMaxChallenge();
+        inputThenPrintSumAndAverage();
 
 
 
@@ -872,6 +873,27 @@ public static void class62Driver(){
             System.out.println("your minimum guess was: " + min);
         }
 
+    }
+
+    public static void inputThenPrintSumAndAverage(){
+        Scanner sc = new Scanner((System.in));
+        int sum = 0;
+        long average = 0l;
+        int input = 0;
+        double count = 0;
+
+        do{
+            try{
+                input = Integer.parseInt(sc.nextLine());
+                count++;
+                sum += input;
+
+            }catch(NumberFormatException nfe){
+                break;
+            }
+        }while(true);
+        average = Math.round(sum/count);
+        System.out.println("SUM = " + sum + " AVG = " + average);
     }
 
     public static void getInputFromScannerDriver(){
