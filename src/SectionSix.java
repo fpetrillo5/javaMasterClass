@@ -41,7 +41,8 @@ public class SectionSix {
 //        System.out.println();
 //        numberToWords(-12);
         //getInputFromScannerDriver();
-        readingUserInputChallenge();
+        //readingUserInputChallenge();
+        minMaxChallenge();
 
 
 
@@ -841,6 +842,38 @@ public static void class62Driver(){
         return input;// this might be an issue but i guess its fine
     }
 
+    public static void minMaxChallenge(){
+        Scanner sc = new Scanner(System.in);
+        double min = 0;
+        double max = 0;
+        double input =0;
+        int count = 0;
+
+        do{
+            try{
+                System.out.println("Please enter an integer to play" +
+                        "or a character to quit the game");
+                input = Double.parseDouble(sc.nextLine());
+                if(input > max || count == 0)
+                    max = input;
+                if(input < min || count == 0)
+                    min = input;
+                count++;
+
+            }catch(NumberFormatException nfe){
+                break;
+            }
+        }while(true);
+        if(count == 0){
+            System.out.println("No valid data entered.");
+        } else{
+            System.out.println("thank you for playing the game");
+            System.out.println("your maximum guess was: " + max);
+            System.out.println("your minimum guess was: " + min);
+        }
+
+    }
+
     public static void getInputFromScannerDriver(){
         System.out.println(getInputFromScanner(2023));
     }
@@ -1092,6 +1125,11 @@ public static void class62Driver(){
     }
 
 }
+
+//class 74 - min max challenge
+/*
+
+ */
 
 //class 72 - reading input with scanner
 /*
