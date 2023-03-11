@@ -19,6 +19,21 @@ public class Accountcc {
         }
     }
 
+    public Accountcc(){
+        this(56789, 2.50,"default name", "default address",
+                "default phone");
+        System.out.println("empty constructor called");
+    }
+
+    public Accountcc(int accountNumber, double accountBalance,
+                     String customerName, String email, String phoneNumber){
+        this.accountNumber = accountNumber;
+        this.accountBalance = accountBalance;
+        this.customerName = customerName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+
     public int withdraw(double funds){
         if(funds > this.accountBalance){
             System.out.println("You do not have sufficient funds to " +
@@ -35,6 +50,15 @@ public class Accountcc {
             System.out.println("Your balance is: " + this.accountBalance);
             return 1;
         }
+    }
+
+    public void acountSettings(){
+        System.out.println("Account Settings:" +
+                " Account Number: " + accountNumber
+        + " Customer Name: " + customerName
+        + " Email: " + email
+        + " Phone Number: " + phoneNumber
+        + " Account Balance: " + accountBalance);
     }
 
     public int getAccountNumber() {
