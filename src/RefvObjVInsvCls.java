@@ -1,30 +1,95 @@
 public class RefvObjVInsvCls {
     public static void main(String[] args) {
 
-        for(int i = 1; i <= 5; i++){
-            LPAStudent s = new LPAStudent("s92300" + i,
-                    //this is pretty badass
-                    switch(i){
-                case 1 -> "Mary";
-                case 2 -> "Carol";
-                case 3 -> "Tim";
-                case 4 -> "Harry";
-                case 5 -> "lisa";
-                        default -> "Anonymous";
-                    },
-                    "05/11/1985",
-                    "Java Masterclass");
-            System.out.println(s);
-        }
+//        for(int i = 1; i <= 5; i++){
+//            LPAStudent s = new LPAStudent("s92300" + i,
+//                    //this is pretty badass
+//                    switch(i){
+//                case 1 -> "Mary";
+//                case 2 -> "Carol";
+//                case 3 -> "Tim";
+//                case 4 -> "Harry";
+//                case 5 -> "lisa";
+//                        default -> "Anonymous";
+//                    },
+//                    "05/11/1985",
+//                    "Java Masterclass");
+//            System.out.println(s);
+//        }
+//
+//        Student pojoStudent = new Student("s923006", "Ann",
+//                "05/11/1985", "Java Masterclass");
+//        LPAStudent recordStudent = new LPAStudent("s923007",
+//                "Bill", "05/11/1985",
+//                "Java Masterclass");
+//        System.out.println(pojoStudent);
+//        System.out.println(recordStudent);
 
-        Student pojoStudent = new Student("s923006", "Ann",
-                "05/11/1985", "Java Masterclass");
-        LPAStudent recordStudent = new LPAStudent("s923007",
-                "Bill", "05/11/1985",
-                "Java Masterclass");
-        System.out.println(pojoStudent);
-        System.out.println(recordStudent);
+//        Wall w = new Wall(5,4);
+//        System.out.println(w.getArea());
+//        w.setHeight(-1.5);
+//        System.out.println("width " + w.getWidth());
+//        System.out.println("height " + w.getHeight());
+//        System.out.println("area " +w.getArea());
+
+//        Point first = new Point(6,5);
+//        Point second = new Point(3,1);
+//
+//        System.out.println("distance(0,0= " +first.distance());
+//        System.out.println("distance(second)= " + first.distance(second));
+//        System.out.println("distance(2,2)= " + first.distance(2,2));
+//        Point point = new Point();
+//        System.out.println("distance()= " + point);
+
+//        Floor f = new Floor(5,4);
+//        System.out.println(f.getArea());
+//
+//        Floor f1 = new Floor(-1, 9);
+//        System.out.println(f1.getArea());
+//
+//        Floor f2 = new Floor(9,-1);
+//        System.out.println(f2.getArea());
+//
+//        Carpet c1 = new Carpet(5);
+//        System.out.println(c1.getCost());
+//
+//        Carpet c2 = new Carpet(-0);
+//        System.out.println(c2.getCost());
+
+
+
+//        Carpet carpet = new Carpet(3.5);
+//        Floor floor = new Floor(2.75, 4.0);
+//        Calculator calculator = new Calculator(floor, carpet);
+//        System.out.println("total= " + calculator.getTotalCost());
+//        carpet = new Carpet(1.5);
+//        floor = new Floor(5.4, 4.5);
+//        calculator = new Calculator(floor, carpet);
+//        System.out.println("total= " + calculator.getTotalCost());
+
+        ComplexNumber one = new ComplexNumber(1.0, 1.0);
+        ComplexNumber number = new ComplexNumber(2.5, -1.5);
+        one.add(1,1);
+        System.out.println("one.real= " + one.getReal());
+        System.out.println("one.imaginary= " + one.getImaginary());
+        one.subtract(number);
+        System.out.println("one.real= " + one.getReal());
+        System.out.println("one.imaginary= " + one.getImaginary());
+        number.subtract(one);
+        System.out.println("number.real= " + number.getReal());
+        System.out.println("number.imaginary= " + number.getImaginary());
+
+
+        /*
+        Method call subtract(-2.0,-8.0) set a field value of
+        "ComplexNumber(real = -5.0, imaginary = -8.0)", but
+        "ComplexNumber(real = -2.0, imaginary = -8.0)" was expected.
+        Field with name [real] has value [-5.0]. Field with name [imaginary]
+         has value [-8.0]. expected:<-2.0> but was:<-5.0>
+         */
     }
+
+
 }
 /*
 // class 83 - reference vs object vs instance vs class
