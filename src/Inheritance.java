@@ -14,6 +14,13 @@ public class Inheritance {
         Dog retriever = new Dog("Labrador Retriever", 65,"Floppy",
                 "Swimmer");
         doAnimalStuff(retriever, "slow");
+
+        Dog wolf = new Dog("Wolf", 130);
+        doAnimalStuff(wolf, "fast");
+
+        Fish fish = new Fish("goldfish",.25, 2, 3);
+        doAnimalStuff(fish,"fast");
+
     }
 
     public static void doAnimalStuff(Animal animal, String speed){
@@ -86,5 +93,50 @@ simply call the parent class's method, which is somewhat redundant to do.
 3) or the method can call the parent class's method, and include other code
 to run, so it can extend the functionality for the Dog, for that behavior.
 
+//class 90 - inheritance part 3
+
+not all methods need to be exposed (he means set to public), especially if
+you only intend for them to be called internally from the current class.
+
+we get a compiler error because type si one of the fields inherited by Dog
+from Animal, but because it is private, no other classes, not even
+subclasses, can access or use this field, in its own method.
+To get around this, we use the protected modifier.
+
+    what this modifier says is let any class that is a subclass, access this
+    field. this is called limited encapsulation. We are allowing some limited
+    access, to our internal fields, and that is to subclasses.
+    Protected also means that any classes in the same package, will also have
+    access.
+
+    Java first looks on the subclass for a method or a field with that name,
+    then it will go up the inheritance tree, looking for a match.
+
+
+*Polymorphism
+
+means many forms
+in this class, we showed the  animal can take many forms, the base class
+animal, Dog, Fish.
+Advantages:
+
+makes code simpler,
+    With doAnimalStuff(), we wrote code without having to know about
+    subclass types. we didnt have to write code to check the type of the
+    object, and then decide what method to call, Java did that at runtime.
+
+encourages code extensibility
+    its very easy to subclass and override or extend a method
+
+
+// class 91 - what is java.lang.Object
+
+every class you create in java, intrinsically extends a special java class.
+The class is named Object, and its in the java.lang package
+
+Class Object is the root of the class hierarchy. every class has Object as
+a superclass. All objects including arrays, implement the methods of this
+class. whether you knew it or not, your classes were extending this class,
+Object.
 
  */
