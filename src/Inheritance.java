@@ -21,6 +21,33 @@ public class Inheritance {
         Fish fish = new Fish("goldfish",.25, 2, 3);
         doAnimalStuff(fish,"fast");
 
+        Pupil max = new Pupil("Max", 21);
+        System.out.println(max.toString());
+
+        PrimarySchoolPupil jimmy = new PrimarySchoolPupil("jimmy", 7,"Carol");
+        System.out.println(jimmy);
+
+        Worker w = new Worker("paco","1/24/1978","unknown");
+        System.out.println(w);
+        System.out.println();
+        Employee e = new Employee("matthew", "4/23/2017", "unknown",
+                12345,"3/24/2023");
+        System.out.println(e);
+        System.out.println();
+
+        SalariedEmployee s1 = new SalariedEmployee("matthew", "4/23/2017", "unknown",
+                12345,"3/24/2023", 150000,false);
+        System.out.println(s1);
+        s1.retire();
+        System.out.println(s1);
+
+        HourlyEmployee h1 = new HourlyEmployee("matthew", "4/23/2017", "unknown",
+                12345,"3/24/2023", 150.00);
+        System.out.println(h1);
+        h1.getDoublePay();
+        System.out.println(h1);
+
+
     }
 
     public static void doAnimalStuff(Animal animal, String speed){
@@ -29,6 +56,47 @@ public class Inheritance {
         System.out.println(animal);
         System.out.println("_ _ _ _ _");
     }
+
+}
+
+class Pupil {
+
+    private String name;
+    private int age;
+
+
+
+
+
+    public Pupil(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return  name + " is " + age;
+//        return "Pupil{" +
+//                "name='" + name + '\'' +
+//                ", age=" + age +
+//                '}';
+    }
+}
+
+class PrimarySchoolPupil extends Pupil{
+    private String parentName;
+
+    PrimarySchoolPupil(String name, int age, String parentName){
+        super(name,age);
+        this.parentName = parentName;
+    }
+
+    public String toString(){
+        return parentName + "'s kid, " + super.toString();
+    }
+
+
+
 
 }
 /*
@@ -138,5 +206,15 @@ Class Object is the root of the class hierarchy. every class has Object as
 a superclass. All objects including arrays, implement the methods of this
 class. whether you knew it or not, your classes were extending this class,
 Object.
+
+hashcode is an integer, that is unique to an instance (in the currently
+executing code). when an instance is created, its assigned a hashcode
+and that is what can tell us if our multiple references are pointing
+to a single instance. Its a mechanism for comparison, like an address
+for a house, ( i always thought it was the address in memory)
+
+we learned that all classes, which do not explicitly extend another class
+will implicitly extend a Class named Object. Object is the base class in
+Java, which means all classes can use or override Object's methods.
 
  */
